@@ -34,4 +34,71 @@
   html.dark ::-webkit-scrollbar-thumb:hover {
     background: #333; /* Hover del thumb en modo oscuro */
   }
+  .animated-text {
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    animation: fadeInText 2s ease-in-out;
+    color: #333;
+    letter-spacing: 1px;
+  }
   
+  .animated-text span {
+    opacity: 0;
+    animation:
+      slideIn 1s forwards,
+      colorChange 4s infinite alternate;
+    transform: translateY(20px);
+  }
+  
+  .animated-text span:nth-child(1) {
+    animation-delay: 0s;
+  }
+  
+  .animated-text span:nth-child(2) {
+    animation-delay: 0.5s;
+  }
+  
+  @keyframes slideIn {
+    0% {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeInText {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes colorChange {
+    0% {
+      color: #4b6cb7;
+    }
+    25% {
+      color: #a8d0e6;
+    }
+    50% {
+      color: #182848;
+    }
+    75% {
+      color: #f9f9f9;
+    }
+    100% {
+      color: #f25f5c;
+    }
+  }
+  
+ 
