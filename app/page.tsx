@@ -241,7 +241,8 @@ export default function Home() {
 
       <section className="flex flex-col md:flex-row items-center py-16 px-4">
         {/* Texto a la izquierda */}
-        <div className="text-center px-4 md:px-8 lg:px-16 py-8 rounded-2xl">
+       <div className="flex-1 text-left pr-8">
+         <div className="text-center px-4 md:px-8 lg:px-16 py-8 rounded-2xl">
   <h2 className="text-4xl md:text-5xl font-extrabold text-blue-600 dark:text-blue-400 mb-4 tracking-tight">
     Estamos en cada detalle
   </h2>
@@ -255,6 +256,7 @@ export default function Home() {
     Con nuestra ayuda, muchas empresas han logrado mejorar su presencia en línea 
     y obtener resultados sorprendentes.
   </p>
+</div>
 </div>
 
           <br></br>
