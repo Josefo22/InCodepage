@@ -1,15 +1,80 @@
+'use client';
+
+import React, { useState } from 'react';
 import {
   FaPhoneAlt,
   FaEnvelope,
   FaRegHandshake,
   FaClipboardList,
   FaLaptopCode,
-} from "react-icons/fa"; // Íconos para contacto
+} from 'react-icons/fa'; // Íconos para contacto
+import emailjs from 'emailjs-com';
 
-import { title } from "@/components/primitives"; // Asegúrate de que 'title' esté correctamente importado
-import FloatingWhatsAppButton from "@/components/FloatingWhatsAppButton";
+import { title } from '@/components/primitives'; // Asegúrate de que 'title' esté correctamente importado
+import FloatingWhatsAppButton from '@/components/FloatingWhatsAppButton';
 
-export default function ContactPage() {
+const ContactPage = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    service: '',
+    message: '',
+  });
+
+  const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState(false);
+
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >,
+  ) => {
+    const { id, value } = e.target;
+
+    setFormData((prevData) => ({
+      ...prevData,
+      [id]: value,
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setError(false);
+    setSubmitted(false);
+
+    // Enviar datos a EmailJS
+    if (typeof window !== 'undefined') { 
+    try {
+      const templateParams = {
+        from_name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        service: formData.service,
+        message: formData.message,
+      };
+
+      await emailjs.send(
+        'service_v4y1srp', // Reemplaza con tu Service ID de EmailJS
+        'template_o35m8ig', // Reemplaza con tu Template ID de EmailJS
+        templateParams,
+        '9LfKsfYAcJbbDa_xq', // Reemplaza con tu clave pública (User ID)
+      );
+
+      setSubmitted(true); // Muestra un mensaje de éxito
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        service: '',
+        message: '',
+      });
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    } catch (error) {
+      setError(true); // Muestra un mensaje de error
+    }
+  }};
+
   return (
     <div className="space-y-12">
       {/* Título principal */}
@@ -81,17 +146,29 @@ export default function ContactPage() {
           mejor valor por tu inversión.
         </p>
       </section>
-
-      {/* Formulario de Contacto */}
+      {/* Secciones Adicionales */}
       <section className="space-y-8">
         <h2 className="text-2xl font-semibold text-gray-800 dark:text-gray-100 text-center">
-          <FaClipboardList
-            className="inline-block text-blue-600 dark:text-blue-400"
+          <FaLaptopCode
+            className="inline-block text-yellow-600 dark:text-yellow-400"
             size={30}
           />
-          Contáctanos
+          Experiencia Personalizada y a la Medida
         </h2>
-        <form className="max-w-4xl mx-auto space-y-6 bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg">
+        <p className="text-lg text-gray-700 dark:text-gray-300 text-center">
+          Nos aseguramos de entender tus necesidades específicas para ofrecerte
+          una solución web completamente personalizada.
+        </p>
+      </section>
+
+      <FloatingWhatsAppButton />
+
+      {/* Formulario */}
+      <section className="space-y-8">
+        <form
+          className="max-w-4xl mx-auto space-y-6 bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg"
+          onSubmit={handleSubmit}
+        >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <label
@@ -105,6 +182,8 @@ export default function ContactPage() {
                 className="mt-2 w-full px-4 py-2 border rounded-md text-gray-700 dark:text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700"
                 id="name"
                 type="text"
+                value={formData.name}
+                onChange={handleChange}
               />
             </div>
             <div>
@@ -119,6 +198,8 @@ export default function ContactPage() {
                 className="mt-2 w-full px-4 py-2 border rounded-md text-gray-700 dark:text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700"
                 id="email"
                 type="email"
+                value={formData.email}
+                onChange={handleChange}
               />
             </div>
           </div>
@@ -135,6 +216,8 @@ export default function ContactPage() {
                 className="mt-2 w-full px-4 py-2 border rounded-md text-gray-700 dark:text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700"
                 id="phone"
                 type="tel"
+                value={formData.phone}
+                onChange={handleChange}
               />
             </div>
             <div>
@@ -148,7 +231,10 @@ export default function ContactPage() {
                 required
                 className="mt-2 w-full px-4 py-2 border rounded-md text-gray-700 dark:text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700"
                 id="service"
+                value={formData.service}
+                onChange={handleChange}
               >
+                <option value="">Selecciona un servicio</option>
                 <option value="sitio-institucional">Sitio Institucional</option>
                 <option value="tienda-online">Tienda Online</option>
                 <option value="consultoria">Consultoría</option>
@@ -167,6 +253,8 @@ export default function ContactPage() {
               required
               className="mt-2 w-full px-4 py-2 border rounded-md text-gray-700 dark:text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700"
               id="message"
+              value={formData.message}
+              onChange={handleChange}
             />
           </div>
           <div className="flex justify-center">
@@ -177,6 +265,16 @@ export default function ContactPage() {
               Enviar Consulta
             </button>
           </div>
+          {submitted && (
+            <p className="text-center text-green-500 font-semibold mt-4">
+              ¡Gracias por contactarnos! Responderemos a la brevedad.
+            </p>
+          )}
+          {error && (
+            <p className="text-center text-red-500 font-semibold mt-4">
+              Ocurrió un error al enviar el mensaje. Intenta nuevamente.
+            </p>
+          )}
         </form>
       </section>
 
@@ -225,4 +323,6 @@ export default function ContactPage() {
       </div>
     </div>
   );
-}
+};
+
+export default ContactPage;
