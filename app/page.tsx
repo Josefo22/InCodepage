@@ -13,21 +13,26 @@ export default function Home() {
   return (
     <div className="min-h-screen px-4 py-8 md:py-10">
       {/* Sección Principal */}
-      <section className="flex flex-col items-start justify-center">
+        <section className="flex flex-col items-start justify-center">
         <div className="max-w-4xl text-left">
           <span className={`${title()} text-6xl md:text-7xl font-bold`}>
             In&nbsp;
           </span>
           <span
-            className={`${title({ color: "blue" })} text-6xl md:text-7xl font-bold`}
+            className={`${title({ color: 'blue' })} text-6xl md:text-7xl font-bold`}
           >
-            Code&nbsp;
+            Code
+            <span className="inline-block text-blue-500 text-6xl animate-bounce transform hover:scale-110 transition-all">
+              🚀
+            </span>
+            &nbsp;
           </span>
           <br />
+
           <span className={`${title()} text-4xl md:text-5xl font-semibold`}>
             Desarrollo Web a Medida
           </span>
-          <div className={`${subtitle({ class: "mt-4" })} text-xl md:text-2xl`}>
+          <div className={`${subtitle({ class: 'mt-4' })} text-xl md:text-2xl`}>
             Somos expertos en diseño web, dedicados a crear sitios atractivos y
             modernos que capturan la esencia de cada negocio. Con años de
             experiencia en el sector, ofrecemos soluciones personalizadas que
@@ -41,9 +46,9 @@ export default function Home() {
           <Link
             isExternal
             className={buttonStyles({
-              color: "primary",
-              radius: "full",
-              variant: "shadow",
+              color: 'primary',
+              radius: 'full',
+              variant: 'shadow',
             })}
             href={siteConfig.links.docs}
           >
@@ -51,6 +56,7 @@ export default function Home() {
           </Link>
         </div>
       </section>
+
 
       {/* Sección Redes Sociales */}
       <section className="flex flex-col items-start justify-center mt-16">
