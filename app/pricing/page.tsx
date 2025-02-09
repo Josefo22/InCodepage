@@ -67,15 +67,6 @@ function ProjectCard({
       <p className="text-sm text-gray-600 dark:text-gray-300">
         <strong>Ubicación:</strong> {location}
       </p>
-      <a
-        className="mt-4 inline-flex items-center text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-500 transition"
-        href={link}
-        rel="noopener noreferrer"
-        target="_blank"
-      >
-        Ver Sitio Web
-        <ArrowTopRightOnSquareIcon className="w-5 h-5 ml-1" />
-      </a>
       <FloatingWhatsAppButton />
     </div>
   );
