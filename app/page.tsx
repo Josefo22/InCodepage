@@ -181,6 +181,7 @@ export default function Home() {
       </section>
 
       {/* Sección Casos de Éxito */}
+      {/* Sección Casos de Éxito */}
       <section className="flex flex-col md:flex-row items-center py-16 px-4">
         {/* Texto a la izquierda */}
         <div className="flex-1 text-left pr-8">
@@ -198,93 +199,114 @@ export default function Home() {
           <p className="text-lg text-gray-700 dark:text-gray-300 mb-4">
             <strong className="text-gray-900 dark:text-gray-100">
               Experiencia Comprobada:
-            </strong>{" "}
-            Nuestro equipo tiene años de experiencia en WordPress y soluciones
-            personalizadas.
+            </strong>{' '}
+            Nuestro equipo tiene años de experiencia en creación web y
+            soluciones personalizadas.
           </p>
           <p className="text-lg text-gray-700 dark:text-gray-300 mb-4">
             <strong className="text-gray-900 dark:text-gray-100">
               Diseño Atractivo:
-            </strong>{" "}
+            </strong>{' '}
             Creamos diseños que mejoran la experiencia de usuario y la
             conversión de visitas.
           </p>
           <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">
             <strong className="text-gray-900 dark:text-gray-100">
               Optimización Constante:
-            </strong>{" "}
+            </strong>{' '}
             Nos aseguramos de mantener tu sitio optimizado y actualizado.
           </p>
           <div className="text-center">
             <Link
-              className="bg-blue-500 text-white py-2 px-6 rounded-lg hover:bg-blue-600 dark:bg-blue-600 dark:hover:bg-blue-500 transition-colors"
+              className="inline-block bg-blue-500 text-white font-semibold py-2 px-4 rounded-lg transition duration-300 transform hover:scale-105 hover:translate-x-2 hover:shadow-lg hover:bg-blue-600"
               href="#"
             >
-              Ver Portfolio
+              Ver portfolio
             </Link>
           </div>
         </div>
 
         {/* Imagen del mockup a la derecha */}
-        <div className="flex-1 mt-8 md:mt-0" />
+
+        <div className="flex-1 mt-8 md:mt-0">
+          <Image
+            alt="Mockup"
+            className="rounded-lg shadow-lg transform transition-all duration-500 ease-in-out hover:scale-105 hover:rotate-3 hover:shadow-2xl"
+            height={550}
+            src="/npc.png"
+            width={450}
+          />
+        </div>
       </section>
+
       <section className="flex flex-col md:flex-row items-center py-16 px-4">
-        {/* Contenido de texto a la izquierda */}
+        {/* Texto a la izquierda */}
         <div className="flex-1 text-left pr-8">
           <h2 className="text-3xl font-bold text-blue-500 mb-4 dark:text-blue-400">
             Estamos en cada detalle
           </h2>
-          <h3 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">
+          <h3 className="text-xl font-semibold mb-6 text-gray-900 dark:text-gray-100">
             Nuestros clientes lo dicen
           </h3>
 
-          <div className="mb-12">
-            <blockquote className="text-lg text-gray-700 dark:text-gray-300 mb-4">
-              <p className="italic">
-                “Necesitábamos un rediseño completo de nuestro sitio web en
-                Barcelona y Macweb hizo un trabajo fantástico. El nuevo diseño
-                no solo es visualmente atractivo, sino que también mejora la
-                experiencia del usuario y refleja nuestros valores ecológicos a
-                la perfección. Ya estamos viendo un aumento en las visitas y
-                ventas a través de la web.”
+          <p className="text-base text-gray-700 dark:text-gray-300 mb-6">
+            Nos complace compartir algunos comentarios de nuestros clientes
+            satisfechos. Con nuestra ayuda, muchas empresas han logrado mejorar
+            su presencia en línea y sus resultados.
+          </p>
+
+          {/* Testimonios */}
+          <div className="space-y-8">
+            <blockquote className="text-base text-gray-700 dark:text-gray-300">
+              <p className="italic mb-2">
+                “InCode transformó nuestra presencia digital. Gracias a su
+                enfoque profesional y su atención al detalle, nuestra página web
+                ahora refleja la calidad de nuestros servicios y hemos visto un
+                aumento significativo en las consultas de clientes.”
               </p>
-              <footer className="mt-4 font-semibold">
-                Alejandro - Barcelona, España
+              <footer className="font-semibold">
+                Carlos Gómez - Bogotá, Colombia
               </footer>
             </blockquote>
-          </div>
 
-          <div className="mb-12">
-            <blockquote className="text-lg text-gray-700 dark:text-gray-300 mb-4">
-              <p className="italic">
-                “The Macweb team designed a fantastic website for my restaurant
-                in New York. They completed it quickly and incorporated all of
-                our needs and our entire menu into the site. Their
-                professionalism and efficiency are second to none.”
+            <blockquote className="text-base text-gray-700 dark:text-gray-300">
+              <p className="italic mb-2">
+                “Trabajar con InCode fue una experiencia increíble. Nos ayudaron
+                a diseñar y desarrollar una plataforma a medida que ha mejorado
+                nuestra eficiencia operativa. El soporte que nos dieron siempre
+                fue rápido y profesional.”
               </p>
-              <footer className="mt-4 font-semibold">
-                Christian - New York, USA
+              <footer className="font-semibold">
+                Ana Martínez - Santiago, Chile
               </footer>
             </blockquote>
-          </div>
 
-          <div>
-            <blockquote className="text-lg text-gray-700 dark:text-gray-300 mb-4">
-              <p className="italic">
-                “Crearon un sitio web para nuestra empresa metalúrgica en
-                Santiago. El proceso fue rápido y hicieron varias propuestas,
-                además el nuevo sitio ha aumentado nuestras consultas y ventas.
-                ¡Altamente recomendados!”
+            <blockquote className="text-base text-gray-700 dark:text-gray-300">
+              <p className="italic mb-2">
+                “InCode helped us revamp our website, making it faster and more
+                user-friendly. Their team attention to detail and dedication to
+                understanding our business needs were impressive. Highly
+                recommend them!”
               </p>
-              <footer className="mt-4 font-semibold">
-                Rodrigo - Santiago, Chile
+              <footer className="font-semibold">
+                Oliver Blake - Chicago, USA
               </footer>
             </blockquote>
           </div>
         </div>
 
         {/* Imagen a la derecha */}
-        <div className="flex-1 mt-8 md:mt-0" />
+        <div className="flex-1 mt-8 md:mt-0">
+          <div className="flex-1 mt-8 md:mt-0 flex justify-center">
+            <Image
+              alt="Mockup"
+              className="rounded-lg shadow-lg transform transition-all duration-500 ease-in-out hover:scale-105 hover:rotate-3 hover:shadow-2xl"
+              height={550}
+              src="/npc2.png" // Usa la ruta relativa desde la raíz
+              width={450} // Ajusta el tamaño según tus necesidades
+            />
+          </div>
+        </div>
       </section>
       <FloatingWhatsAppButton />
       <div className="flex flex-col items-center space-y-2 p-4">
