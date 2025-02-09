@@ -239,69 +239,64 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="flex flex-col md:flex-row items-center py-16 px-4">
-        {/* Texto a la izquierda */}
-       <div className="flex-1 text-left pr-8">
-         <div className="text-center px-4 md:px-8 lg:px-16 py-8 rounded-2xl">
-  <h2 className="text-4xl md:text-5xl font-extrabold text-blue-600 dark:text-blue-400 mb-4 tracking-tight">
-    Estamos en cada detalle
-  </h2>
-  
-  <h3 className="text-2xl md:text-3xl font-semibold text-gray-800 dark:text-gray-100 mb-6">
-    Nuestros clientes lo dicen
-  </h3>
+     <section className="flex flex-col md:flex-row items-center py-16 px-4 md:px-12 lg:px-24 gap-12">
+  {/* Texto a la izquierda */}
+  <div className="flex-1">
+    <div className="text-center md:text-left space-y-6">
+      <h2 className="text-4xl md:text-5xl font-extrabold text-blue-600 dark:text-blue-400 tracking-tight">
+        Estamos en cada detalle
+      </h2>
 
-  <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed max-w-3xl mx-auto">
-    Nos complace compartir algunos comentarios de nuestros clientes satisfechos.
-    Con nuestra ayuda, muchas empresas han logrado mejorar su presencia en línea 
-    y obtener resultados sorprendentes.
-  </p>
-</div>
-</div>
+      <h3 className="text-2xl md:text-3xl font-semibold text-gray-800 dark:text-gray-100">
+        Nuestros clientes lo dicen
+      </h3>
 
-          <br></br>
+      <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed">
+        Nos complace compartir algunos comentarios de nuestros clientes
+        satisfechos. Con nuestra ayuda, muchas empresas han logrado mejorar
+        su presencia en línea y obtener resultados sorprendentes.
+      </p>
+    </div>
 
-          {/* Testimonios */}
-          <div className="space-y-8">
-            <blockquote className="text-base text-gray-700 dark:text-gray-300">
-              <p className="italic mb-2">
-                “InCode transformó nuestra presencia digital. Gracias a su
-                enfoque profesional y su atención al detalle, nuestra página web
-                ahora refleja la calidad de nuestros servicios y hemos visto un
-                aumento significativo en las consultas de clientes.”
-              </p>
-              <footer className="font-semibold">
-                Carlos Gómez - Bogotá, Colombia
-              </footer>
-            </blockquote>
+    {/* Testimonios */}
+    <div className="mt-8 space-y-6">
+      <blockquote className="border-l-4 border-blue-500 pl-4 text-gray-700 dark:text-gray-300">
+        <p className="italic mb-2">
+          “InCode transformó nuestra presencia digital. Gracias a su enfoque
+          profesional y su atención al detalle, nuestra página web ahora refleja
+          la calidad de nuestros servicios y hemos visto un aumento significativo
+          en las consultas de clientes.”
+        </p>
+        <footer className="font-semibold text-gray-900 dark:text-gray-100">
+          Carlos Gómez - Bogotá, Colombia
+        </footer>
+      </blockquote>
 
-            <blockquote className="text-base text-gray-700 dark:text-gray-300">
-              <p className="italic mb-2">
-                “Trabajar con InCode fue una experiencia increíble. Nos ayudaron
-                a diseñar y desarrollar una plataforma a medida que ha mejorado
-                nuestra eficiencia operativa. El soporte que nos dieron siempre
-                fue rápido y profesional.”
-              </p>
-              <footer className="font-semibold">
-                Ana Martínez - Santiago, Chile
-              </footer>
-            </blockquote>
-          </div>
-        </div>
+      <blockquote className="border-l-4 border-blue-500 pl-4 text-gray-700 dark:text-gray-300">
+        <p className="italic mb-2">
+          “Trabajar con InCode fue una experiencia increíble. Nos ayudaron a diseñar
+          y desarrollar una plataforma a medida que ha mejorado nuestra eficiencia 
+          operativa. El soporte que nos dieron siempre fue rápido y profesional.”
+        </p>
+        <footer className="font-semibold text-gray-900 dark:text-gray-100">
+          Ana Martínez - Santiago, Chile
+        </footer>
+      </blockquote>
+    </div>
+  </div>
 
-        {/* Imagen a la derecha */}
-        <div className="flex-1 mt-8 md:mt-0">
-          <div className="flex-1 mt-8 md:mt-0 flex justify-center">
-            <Image
-              alt="Mockup"
-              className="rounded-lg shadow-lg transform transition-all duration-500 ease-in-out hover:scale-105 hover:rotate-3 hover:shadow-2xl"
-              height={550}
-              src="/npc2.png" // Usa la ruta relativa desde la raíz
-              width={450} // Ajusta el tamaño según tus necesidades
-            />
-          </div>
-        </div>
-      </section>
+  {/* Imagen a la derecha */}
+  <div className="flex-1 flex justify-center">
+    <Image
+      alt="Mockup"
+      className="rounded-xl shadow-lg transform transition-transform duration-500 ease-in-out hover:scale-105 hover:rotate-1 hover:shadow-2xl"
+      height={550}
+      src="/npc2.png" // Asegúrate que la ruta de la imagen es correcta
+      width={450}
+    />
+  </div>
+</section>
+
       <FloatingWhatsAppButton />
       <div className="flex flex-col items-center space-y-2 p-4">
         <span className="text-4xl font-semibold text-gray-800 animate-pulse">
