@@ -242,18 +242,21 @@ export default function Home() {
       <section className="flex flex-col md:flex-row items-center py-16 px-4">
         {/* Texto a la izquierda */}
         <div className="flex-1 text-left pr-8">
-          <h2 className="text-3xl font-bold text-blue-500 mb-4 dark:text-blue-400">
-            Estamos en cada detalle
-          </h2>
-          <h3 className="text-xl font-semibold mb-6 text-gray-900 dark:text-gray-100">
-            Nuestros clientes lo dicen
-          </h3>
+        <div className="text-center px-4 md:px-8 lg:px-16 py-8 bg-white dark:bg-white rounded-2xl shadow-lg">
+  <h2 className="text-4xl md:text-5xl font-extrabold text-blue-600 mb-4 tracking-tight">
+    Estamos en cada detalle
+  </h2>
+  
+  <h3 className="text-2xl md:text-3xl font-semibold text-gray-800 mb-6">
+    Nuestros clientes lo dicen
+  </h3>
 
-          <p className="text-base text-gray-700 dark:text-gray-300 mb-6">
-            Nos complace compartir algunos comentarios de nuestros clientes
-            satisfechos. Con nuestra ayuda, muchas empresas han logrado mejorar
-            su presencia en línea y sus resultados.
-          </p>
+  <p className="text-lg md:text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
+    Nos complace compartir algunos comentarios de nuestros clientes satisfechos. 
+    Con nuestra ayuda, muchas empresas han logrado mejorar su presencia en línea 
+    y obtener resultados sorprendentes.
+  </p>
+</div>
 
           {/* Testimonios */}
           <div className="space-y-8">
