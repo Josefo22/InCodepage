@@ -257,6 +257,7 @@ export default function Home() {
     y obtener resultados sorprendentes.
   </p>
 </div>
+          <br></br>
 
           {/* Testimonios */}
           <div className="space-y-8">
